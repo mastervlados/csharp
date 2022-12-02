@@ -3,7 +3,7 @@
 // a = 2 b = 10 -> max = 10
 // a = -9 b = -3 -> max = -3
 
-Console.WriteLine("Это программа сравнит 2 числа и покажет какое из них больше, а какое меньше");
+Console.WriteLine("Программа сравнит 2 числа и покажет какое из них больше, а какое меньше");
 
 int numberA = 0;
 int numberB = 0;
@@ -27,9 +27,18 @@ else
         Console.WriteLine(""); // br
         // Fix problem
         // case can only be used with a constant!
-        if(numberA > numberB){Console.WriteLine($"> Число {numberA} больше числа {numberB}.");}
-        if(numberA < numberB){Console.WriteLine($"> Число {numberB} больше числа {numberA}.");}
-        if(numberA == numberB){Console.WriteLine($"> {numberA}, {numberB} равны!");}
+        if(numberA > numberB)
+        {
+            Console.WriteLine($"> Число {numberA} больше числа {numberB}.");
+        }
+        if(numberA < numberB)
+        {
+            Console.WriteLine($"> Число {numberB} больше числа {numberA}.");
+        }
+        if(numberA == numberB)
+        {
+            Console.WriteLine($"> {numberA}, {numberB} равны!");
+        }
     }
 }
 
