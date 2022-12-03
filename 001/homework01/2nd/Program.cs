@@ -28,17 +28,13 @@ else
         // Fix problem
         // case can only be used with a constant!
         if(numberA > numberB)
-        {
             Console.WriteLine($"> Число {numberA} больше числа {numberB}.");
-        }
+
         if(numberA < numberB)
-        {
             Console.WriteLine($"> Число {numberB} больше числа {numberA}.");
-        }
+        
         if(numberA == numberB)
-        {
             Console.WriteLine($"> {numberA}, {numberB} равны!");
-        }
     }
 }
 
