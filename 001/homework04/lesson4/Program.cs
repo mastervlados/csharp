@@ -102,7 +102,7 @@
 //Задача 30: Напишите программу, которая выводит массив из 8 элементов, заполненный нулями и единицами в случайном порядке.
 //[1,0,1,1,0,1,0,0]
 
-void FilArrayRandomValuesLikeZeroOrOne(int arrayLength)
+void FillArrayRandomValuesLikeZeroOrOne(int arrayLength)
 {
     int[] array = new int[arrayLength];
 	string result = String.Empty;
@@ -119,6 +119,6 @@ void FilArrayRandomValuesLikeZeroOrOne(int arrayLength)
 
     Console.WriteLine($"> Заполнил массив из {arrayLength} елементов 1 и 0:\n[{result}]");
 }
-FilArrayRandomValuesLikeZeroOrOne(8);
-FilArrayRandomValuesLikeZeroOrOne(10);
-FilArrayRandomValuesLikeZeroOrOne(3);
+FillArrayRandomValuesLikeZeroOrOne(8);
+FillArrayRandomValuesLikeZeroOrOne(10);
+FillArrayRandomValuesLikeZeroOrOne(3);
