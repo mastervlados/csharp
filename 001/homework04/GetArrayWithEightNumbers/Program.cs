@@ -9,7 +9,7 @@ string GetSequenceOfNumbers()
 {
     bool isCorrect = false;
     string sequence = String.Empty;
-    string pattern = @"(^\d*[0-9])+(,\d*[0-9]|$)";
+    string pattern = @"(^\d*[0-9])+(,\d*[0-9]|$)"; 
     Regex term = new Regex(pattern);
 
     while (!isCorrect)
