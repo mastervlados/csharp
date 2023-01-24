@@ -3,7 +3,7 @@
 // ********************************
 /*
  * 1. ✔️Create Git repo
- * 2. Complete the circuit of the algorithm
+ * 2. 📌Complete the circuit of the algorithm
  * 3. ✔️Add folder «assets» to that repo, add file README.md
  * 4. ✔️Code | result array[] | array[v].length <= 3 :: string; uses arrays
  *      Examples:
