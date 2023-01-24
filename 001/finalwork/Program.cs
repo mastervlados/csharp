@@ -5,7 +5,7 @@
  * 1. ✔️Create Git repo
  * 2. Complete the circuit of the algorithm
  * 3. ✔️Add folder «assets» to that repo, add file README.md
- * 4. Code | result array[] | array[v].length <= 3 :: string; uses arrays
+ * 4. ✔️Code | result array[] | array[v].length <= 3 :: string; uses arrays
  *      Examples:
  *          input: ["hell", "2", "done", ":D"] output: ["2", ":D"]
  *          input: ["1337", "322", "-2", "computer science"] output: ["322", "-2"]
@@ -49,13 +49,29 @@ void PrintArray(string[] array)
 
 string[] GetNewArrayWithItemsLengthLessOrEqualThree(string[] array)
 {
+    string result = String.Empty;
+    int arrayLength = array.Length;
+
+    for (int i = 0; i < arrayLength; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            result += $"{array[i]}";
+            if (i != arrayLength - 1)
+            {
+                result += ",";
+            }
+        }
+    }
     // Array (before)
+    Console.WriteLine("::> input:");
     PrintArray(array);
 
-    string[] newArray = new string[1];
+    string[] newArray = result.Split(","); // create array from result
 
     // Array (after)
-    Console.WriteLine();
+    Console.WriteLine(); // space before
+    Console.WriteLine("::> output:");
     PrintArray(newArray);
 
     return newArray;
