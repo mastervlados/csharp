@@ -11,16 +11,57 @@
  *          input: ["1337", "322", "-2", "computer science"] output: ["322", "-2"]
  *          input: ["Russia", "Indonesia", "Denmark"] output: []
  * 5. ✔️Do this by Git control system and post it to GitHub
- * 6. Generate pdf file of this project
+ * 6. 💌Generate pdf file of this project
  */
+string[] GetArray()
+{
+    string result = String.Empty;
+    string word = String.Empty;
+    int counter = 1;
+    bool isCorrect = false;
+
+    // User input words
+    while (!isCorrect)
+    {
+        Console.Write($"Type {counter} word: ");
+        word = Console.ReadLine();
+        counter++;
+        result += $"{word},";
+
+        // End loop
+        if (word == String.Empty) 
+        { 
+            isCorrect = true;
+            Console.WriteLine();
+        } 
+    }
+    
+    // Cut the last symbol from result "," (always be)
+    int resultLength = result.Length;
+
+    switch (resultLength)
+    {
+        case 0:
+            break;
+        case 1:
+            result = result.Remove(resultLength - 1);
+            break;
+        default:
+            // 'Cause -2 when it appears as empty 
+            result = result.Remove(resultLength - 2);
+            break;
+    }
+    // Console.WriteLine(result);
+
+    return result.Split(",");
+}
+
+void PrintRowNumber(int rowNumber) { Console.Write($"    {rowNumber} | "); }
 
 void PrintArray(string[] array)
 {
     int counter = 0;
     int rowNumber = 0;
-
-    // Method
-    void PrintRowNumber(int rowNumber) { Console.Write($"    {rowNumber} | "); }
 
     for (int i = 0; i < array.Length; i++)
     {
@@ -50,19 +91,23 @@ void PrintArray(string[] array)
 string[] GetNewArrayWithItemsLengthLessOrEqualThree(string[] array)
 {
     string result = String.Empty;
-    int arrayLength = array.Length;
 
-    for (int i = 0; i < arrayLength; i++)
+    for (int i = 0; i < array.Length; i++)
     {
         if (array[i].Length <= 3)
         {
-            result += $"{array[i]}";
-            if (i != arrayLength - 1)
-            {
-                result += ",";
-            }
+            result += $"{array[i]},";
         }
     }
+    // Cut the last symbol from result "," (always be)
+    int resultLength = result.Length;
+    
+    if (resultLength > 0)
+    {
+        result = result.Remove(resultLength - 1);
+    }
+    // Console.WriteLine(result);
+
     // Array (before)
     Console.WriteLine("::> input:");
     PrintArray(array);
@@ -73,9 +118,16 @@ string[] GetNewArrayWithItemsLengthLessOrEqualThree(string[] array)
     Console.WriteLine(); // space before
     Console.WriteLine("::> output:");
     PrintArray(newArray);
+    // Double space after
+    Console.WriteLine("-----------\n");
 
     return newArray;
 }
 
-string[] testArray = new string[4] { "hell", "2", "done", ":D" };
-GetNewArrayWithItemsLengthLessOrEqualThree(testArray);
+string[] firstArray = new string[4] { "hell", "2", "done", ":D" };
+string[] secondArray = new string[4] { "1337", "322", "-2", "computer science" };
+string[] thirdArray = new string[3] { "Russia", "Indonesia", "Denmark" };
+// GetNewArrayWithItemsLengthLessOrEqualThree(firstArray);
+// GetNewArrayWithItemsLengthLessOrEqualThree(secondArray); 
+// GetNewArrayWithItemsLengthLessOrEqualThree(thirdArray);
+GetNewArrayWithItemsLengthLessOrEqualThree(GetArray());
